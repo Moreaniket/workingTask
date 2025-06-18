@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body>
+
+{% for i in data %}
+<form action="saveupdate" method="post">
+    <input type="hidden" name="id" value="{{i.id}}">
+    <input type="text" name="name" placeholder="Enter your Name" value="{{i.name}}"><br><br>
+    <input type="email" name="email" placeholder="Enter your Email" value="{{i.email}}"><br><br>
+    <input type="tel" name="number" placeholder="Enter your Number" value="{{i.number}}"><br><br>
+    <input type="password" name="password" placeholder="Enter your Password" value="{{i.password}}"><br><br>
+    <button type="submit">Submit</button>
+    {% csrf_token %}
+
+
+</form>
+{% endfor %}
+
+
+</body>
+</html>
